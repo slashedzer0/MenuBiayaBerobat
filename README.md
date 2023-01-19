@@ -4,3 +4,4 @@ Aplikasi ini digunakan untuk membantu pengunjung rumah sakit untuk memeriksa bia
 ### Nama Anggota
 - Doni Wicaksono (21104062)
 - Asep Hudori (21104064)
+- Tri Agung Prayoga (21104052)
