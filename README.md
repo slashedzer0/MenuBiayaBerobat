@@ -9,4 +9,5 @@ Aplikasi ini digunakan untuk membantu pengunjung rumah sakit untuk memeriksa bia
 - Asep Hudori (21104064)
 - Saddam Rizki Saeful Putranto (21104056)
 
-
+### Job desk 
+- Saddam - Tester
