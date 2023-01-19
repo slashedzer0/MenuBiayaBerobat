@@ -11,4 +11,5 @@ Aplikasi ini digunakan untuk membantu pengunjung rumah sakit untuk memeriksa bia
 
 ### Job Desk 
 - Doni - GUI Design / Coding
+- Asep - Coding
 - Saddam - Testing
