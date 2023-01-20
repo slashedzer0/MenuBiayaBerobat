@@ -5,66 +5,42 @@ import java.awt.event.ActionListener;
 
 public class Home extends JFrame {
     private JPanel mainPanel;
-    private JRadioButton penyakitMataRadioButton;
-    private JRadioButton penyakitMentalRadioButton;
     private JLabel pilihJenisPenyakitJLabel;
-    private JButton nextButton;
+    private JButton mataButton;
+    private JButton mentalButton;
 
     public Home() {
         super("Menu Biaya Berobat");
         setContentPane(mainPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(400, 300);
+        setSize(500, 275);
         setVisible(true);
         setLocationRelativeTo(null);
         setResizable(false);
 
-        penyakitMataRadioButton.addActionListener(new ActionListener() {
+        // eksekusi tombol mata
+        mataButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (penyakitMataRadioButton.isSelected()) {
-                    penyakitMentalRadioButton.setSelected(false);
-                }
+                PenyakitMata pma = new PenyakitMata();
+                pma.setVisible(true);
+                dispose();
             }
         });
 
-        penyakitMentalRadioButton.addActionListener(new ActionListener() {
+        // eksekusi tombol mental
+        mentalButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (penyakitMentalRadioButton.isSelected()) {
-                    penyakitMataRadioButton.setSelected(false);
-                }
-            }
-        });
-
-        nextButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (penyakitMataRadioButton.isSelected()) {
-                    PenyakitMata pm = new PenyakitMata();
-                    pm.setVisible(true);
-                    dispose();
-
-                } else if (penyakitMentalRadioButton.isSelected()) {
-                    PenyakitMental pm = new PenyakitMental();
-                    pm.setVisible(true);
-                    dispose();
-                }
-
-                else {
-                    // penerapan exception
-                    try {
-                        throw new Exception("Pilih salah satu jenis penyakit!");
-                    } catch (Exception exception) {
-                        JOptionPane.showMessageDialog(null, exception.getMessage());
-                    }
-                }
+                PenyakitMental pme = new PenyakitMental();
+                pme.setVisible(true);
+                dispose();
             }
         });
     }
 
     public static void main(String[] args) {
-        // penerapan multi-threading
+        // penerapan multi-threading dan exception handling
         EventQueue.invokeLater(new Runnable() {
             public void run () {
                 try {

@@ -5,15 +5,14 @@ import java.awt.event.ActionListener;
 public class PenyakitMata extends Home {
     private JPanel penyakitMataPanel;
     private JLabel pilihJenisPenyakitJLabel;
-    private JButton nextButton;
-    private JRadioButton rabunRadioButton;
-    private JRadioButton katarakRadioButton;
-    private JButton backButton;
+    private JButton katarakButton;
+    private JButton rabunButton;
+    private JButton kembaliButton;
 
     public PenyakitMata() {
         setContentPane(penyakitMataPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(400, 300);
+        setSize(500, 275);
         setVisible(true);
         setLocationRelativeTo(null);
 
@@ -28,33 +27,15 @@ public class PenyakitMata extends Home {
                 "Rp. 3.520.000"
         };
 
-        rabunRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (rabunRadioButton.isSelected()) {
-                    katarakRadioButton.setSelected(false);
-                }
-            }
-        });
-
-        katarakRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (katarakRadioButton.isSelected()) {
-                    rabunRadioButton.setSelected(false);
-                }
-            }
-        });
-
         // penerapan polymorphism
         class backToHome extends Home {
             @Override
             public void setVisible(boolean visible) {
-                super.setVisible(visible);
+                super.setVisible(true);
             }
         }
 
-        backButton.addActionListener(new ActionListener() {
+        kembaliButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Home hm = new backToHome();
@@ -63,23 +44,30 @@ public class PenyakitMata extends Home {
             }
         });
 
-        // menampilkan biaya berobat penyakit mata
-        nextButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (katarakRadioButton.isSelected()) {
-                    JOptionPane.showMessageDialog(null, "Biaya berobat " + daftarPenyakitMata[0] + ": " + biayaPenyakitMata[0]);
-                } else if (rabunRadioButton.isSelected()) {
-                    JOptionPane.showMessageDialog(null, "Biaya berobat " + daftarPenyakitMata[1] + ": " + biayaPenyakitMata[1]);
-                } else {
-                    // penerapan exception
-                    try {
-                        throw new Exception("Pilih salah satu!");
-                    } catch (Exception ex) {
-                        JOptionPane.showMessageDialog(null, ex.getMessage());
-                    }
+        // eksekusi tombol katarak dengan exception handling
+        try {
+            katarakButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    JOptionPane.showMessageDialog(null, "Biaya pengobatan " + daftarPenyakitMata[0] + ": " + biayaPenyakitMata[0]);
                 }
-            }
-        });
+            });
+        }
+        catch (ArrayIndexOutOfBoundsException e) {
+            JOptionPane.showMessageDialog(null, "Tidak ada data!");
+        }
+
+        // eksekuksi tombol rabun dengan exception handling
+        try {
+            rabunButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    JOptionPane.showMessageDialog(null, "Biaya pengobatan " + daftarPenyakitMata[1] + ": " + biayaPenyakitMata[1]);
+                }
+            });
+        }
+        catch (ArrayIndexOutOfBoundsException e) {
+            JOptionPane.showMessageDialog(null, "Tidak ada data!");
+        }
     }
 }
