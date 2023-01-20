@@ -10,6 +10,7 @@ Aplikasi ini digunakan untuk membantu pengunjung rumah sakit untuk memeriksa bia
 - Saddam Rizki Saeful Putranto (21104056)
 
 ### Job Desk 
-- Doni - GUI Design / Coding
+- Doni - GUI / Coding
+- Agung - Coding
 - Asep - Coding
 - Saddam - Testing
