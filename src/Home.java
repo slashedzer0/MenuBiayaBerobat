@@ -17,8 +17,6 @@ public class Home extends JFrame {
         setSize(400, 300);
         setVisible(true);
         setLocationRelativeTo(null);
-
-        // remove maximize button
         setResizable(false);
 
         penyakitMataRadioButton.addActionListener(new ActionListener() {

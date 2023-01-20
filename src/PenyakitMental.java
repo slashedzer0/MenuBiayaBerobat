@@ -18,7 +18,7 @@ public class PenyakitMental extends Home {
         setVisible(true);
         setLocationRelativeTo(null);
 
-        // array enyakit mental
+        // array penyakit mental
         String [] daftarPenyakitMental = {
                 "Bipolar",
                 "Depresi",
