@@ -1,7 +1,15 @@
 ### Aplikasi Menu Biaya Berobat
 Aplikasi ini digunakan untuk membantu pengunjung rumah sakit untuk memeriksa biaya berobat/perawatan yang akan dibayarkan.
 
-![Screenshot 2023-01-19 211854](https://user-images.githubusercontent.com/101719469/213466348-60d816fb-4823-4e58-a1fc-59eb0a0a2286.png)
+![Screenshot 2023-01-21 000303](https://user-images.githubusercontent.com/101719469/213759836-9fecf6c0-0f80-41a8-98e2-f9f9e553d045.png)
+
+### Materi yang diterapkan
+- GUI
+- Class / Object
+- Array
+- Inheritance / Polymorphism
+- Exception Handling
+- Multi-threading
 
 ### Nama Anggota
 - Doni Wicaksono (21104062)
